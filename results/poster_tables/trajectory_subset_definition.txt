@@ -1,0 +1,9 @@
+Trajectory subset definition:
+- Included Seurat clusters: 6, 12, 9, 0, 4, 2, 3, 8, 7, 1, 13, 14
+- Excluded SOX2/NES-low DCX-high neurogenic island clusters: 10, 11, 15, 16, 17
+- Excluded broadly mixed cluster for initial main trajectory: 5
+- Basis: day composition, marker dotplot, marker module scores, and UMAP state-region structure.
+- Interpretation: progression-like differentiation-state ordering candidate, not direct lineage tracing.
+- Specific caution: experimental day is sampling time; same-day cells may occupy different developmental states.
+- Specific caution: SOX2/NES-low DCX-high island may represent neurogenic/immature neuronal states and is shown separately, not forced into the main trajectory.
+

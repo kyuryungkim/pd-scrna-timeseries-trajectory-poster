@@ -1,0 +1,16 @@
+.DS_Store
+.Rhistory
+.RData
+.Rprofile
+.Rproj.user/
+
+data/
+logs/
+results/eposter/
+results/rds/
+*.rds
+*.RDS
+
+e-poster_format/
+conference_template/
+_archive/
