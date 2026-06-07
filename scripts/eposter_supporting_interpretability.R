@@ -9,10 +9,7 @@ suppressPackageStartupMessages({
   library(scales)
 })
 
-repo_dir <- Sys.getenv(
-  "EP_REPO_DIR",
-  unset = "/Users/kyuryung/Documents/Rarenet_2026/public_repos/pd-scrna-timeseries-trajectory"
-)
+repo_dir <- Sys.getenv("EP_REPO_DIR", unset = normalizePath(getwd(), mustWork = FALSE))
 setwd(repo_dir)
 
 default_out_dir <- file.path(
