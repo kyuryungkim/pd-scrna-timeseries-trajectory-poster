@@ -91,6 +91,31 @@ The day-by-pseudotime heatmap showed day-enriched pseudotime regions, but cells 
 
 Marker/module scores changed across rank-based pseudotime bins and helped interpret early, intermediate, and later regions of the focused axis. However, marker-control comparison showed weaker marker-specific separation in later pseudotime bins. This supports a cautious interpretation of the late focused axis.
 
+## Marker and Module Definitions
+
+The marker genes used here were not selected by Slingshot and were not supplied as cluster labels by GEO. They were used as a small curated interpretation panel based on known progenitor, neurogenic, and dopaminergic differentiation markers, together with source-study context.
+
+For the cluster dot plot and module scoring, marker genes were grouped as:
+
+| Module | Genes | Purpose |
+|---|---|---|
+| Early progenitor | `SOX2`, `NES` | progenitor-like signal |
+| Proliferation | `MKI67`, `TOP2A` | cycling/proliferative signal |
+| mDA progenitor | `LMX1A`, `FOXA2`, `EN1`, `OTX2` | midbrain dopaminergic progenitor-related signal |
+| Neurogenic transition | `NEUROG2`, `DCX` | neurogenic transition signal |
+| Mature DA-related | `PITX3`, `TH`, `DDC` | dopaminergic neuron-related signal |
+| Original study context | `CLSTN2`, `PTPRO` | additional source-study context markers |
+
+Module scores were calculated with Seurat `AddModuleScore`. A module score is a relative expression score for a marker gene set compared with matched control genes; it is not a cell fraction, density, or absolute expression value.
+
+The marker-control comparison used a narrower observed marker module focused on representative differentiation-related markers:
+
+```text
+SOX2, MKI67, TOP2A, LMX1A, FOXA2, EN1, NEUROG2, DCX, PITX3, TH, DDC
+```
+
+This observed marker module was compared with 100 expression-matched random gene modules. The random control is gene-level, not a random regrouping of cells. Reduced marker-control separation in later pseudotime bins therefore indicates weaker marker-specific interpretability, not failure of the pseudotime calculation itself.
+
 ## Poster-facing Figures
 
 The stable public figure set is exported to `results/poster_figures/`.
